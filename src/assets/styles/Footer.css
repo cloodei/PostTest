@@ -1,0 +1,144 @@
+* {
+    font-family: 'DM Sans' sans-serif;
+}
+
+.footer-bg-color {
+    background-color: #474747;
+    padding: 40px 0;
+    padding-bottom: 0;
+}
+
+.footer-container {
+    border-bottom: 1px solid #29201d;
+    gap: 120px;
+    padding-bottom: 64px;
+}
+
+.footer-copyright {
+    color: #ADB29E;
+    font-size: 18px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 24px;
+}
+
+.logo {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.title-body {
+    margin: 12px 0;
+    word-wrap: break-word;
+    color: #aab48fad;
+}
+
+.brand-title {
+    color: white;
+    font-family: "Pacifico";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.socials-for-footer {
+    background-color: #ac1d29 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.socials-for-footer:hover {
+    background-color: #f33071 !important;
+}
+
+.footer-pages-section {
+    display: flex;
+    gap: 100px;
+}
+
+.footer-pages {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    color: #d8dbce;
+    gap: 24px;
+}
+
+.footer-pages a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-pages p {
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.footer-pages h4 {
+    width: 124px;
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 24px;
+}
+
+.promotions {
+    width: auto;
+}
+
+.cake-imgs {
+    width: 120px;
+    border-radius: 4px;
+}
+
+.cake-div {
+    width: fit-content !important;
+    margin: 4px;
+    position: relative;
+}
+
+.cake-popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 4px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.cake-div:hover .cake-popup {
+    opacity: 2;
+    background-color: #3b39587a;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgb(255, 242, 216);
+    font-weight: 500;
+    background-color: #251915d5;
+    border-top: 2px solid rgba(0, 0, 0, 0.815);
+    padding: 7px 0;
+}
+  
+.scroll-text {
+    display: inline-block;
+    padding-left: 30%;
+    animation: scroll-left 11s linear infinite;
+}
+  
+@keyframes scroll-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}
+  

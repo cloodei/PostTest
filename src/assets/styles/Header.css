@@ -1,0 +1,170 @@
+li {
+    list-style-type: none;
+}
+
+.gap-6 {
+    gap: 24px;
+}
+
+.gap-7 {
+    gap: 28px;
+}
+
+.gap-8 {
+    gap: 32px;
+}
+
+.gap-9 {
+    gap: 36px;
+}
+
+.order-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background-color: #ce3361;
+    border: none;
+    color: #ffffff;
+    border-radius: 92px;
+    transition: 0.2s ease;
+    padding: 7px 0px;
+    padding-bottom: 11px;
+    max-height: 42px;
+    width: 136px;
+}
+
+.order-btn:hover {
+    background-color: #b60339;
+}
+
+.header-bg {
+    background-image: url('../imgs/headerBGimg.png');
+}
+
+.header-bg {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+.font-pacifico {
+    font-family: 'Pacifico';
+}
+
+.logo-font {
+    font-size: 28px;
+    color: aliceblue;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logo-font:hover {
+    cursor: pointer;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.page-titles {
+    font-weight: 500;
+    color: #dfdfdf !important;
+    border-bottom: 2px solid transparent !important;
+    transition: 0.3s ease !important;
+    padding: 2px 6px !important;
+}
+
+.cart-titles i {
+    color: #dfdfdf !important;
+    border-radius: 100%;
+    transition: 0.2s ease !important;
+    padding: 8px !important;
+}
+
+.page-titles:hover {
+    scale: 1.08;
+    color: #e6e6e6ec !important;
+    border-bottom: 2px solid #fa8072b9 !important;
+}
+
+.cart-titles:hover i {
+    scale: 1.25;
+    color: #e6e6e6ec !important;
+    background-color: #5fffb48e;
+}
+
+.cart-titles:hover span {
+    display: none;
+}
+
+.page-titles-focus {
+    scale: 1.16;
+    color: white !important;
+    font-weight: 600 !important;   
+    font-size: 18px !important;
+    padding-bottom: 3px !important;
+    border-bottom: 2px solid #ff7d6f !important;
+}
+
+.cart-titles-focus i {
+    scale: 1.27;
+    color: #252525 !important;
+    font-size: 18px !important;
+    background-color: #5fffb4de !important;
+}
+
+.page-titles-focus:hover {
+    scale: 1.14;
+    border-bottom: 2px solid #ff7b6c !important;
+}
+
+.cart-titles-focus:hover i {
+    scale: 1.27;
+    color: #252525 !important;
+    font-size: 18px !important;
+    background-color: #5fffb4de !important;
+}
+
+.header-contacts {
+    background-color: #5e5e5ee5;
+}
+
+.text-line {
+    color: #e9e9e9;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    padding: 6px 10px;
+}
+
+.social-icons {
+    margin: 0 8px;
+    border-radius: 100%;
+    background-color: #3b3a3a;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.social-icons:hover {
+    background-color: #5b96ceaf;
+    cursor: pointer;
+}
+
+.sticky-element {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.alert-cart {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    border-radius: 50%;
+    right: 0;
+    transform: translate(25%, -25%);
+}

@@ -1,0 +1,82 @@
+.comment-card {
+    display: grid;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background-color: #fafaf4;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px, rgba(0, 0, 0, 0.150) 0px 4px 4px, rgba(0, 0, 0, 0.150) 0px 6px 6px, rgba(0, 0, 0, 0.150) 0px 8px 8px, rgba(0, 0, 0, 0.150) 0px 16px 16px;
+    transition: all 0.5s ease, transform 0.25s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.04);
+}
+
+
+.margin-comments3 {
+    margin: 4px 18px;
+}
+
+.margin-comments4 {
+    margin: 4px 12px;
+}
+
+.comment-adder {
+    position: absolute;
+    width: fit-content;
+    right: 2.5%;
+    top: -8px;
+    text-shadow: 5px 5px 9px rgba(173, 9, 64, 0.45);
+    cursor: pointer;
+    color: rgb(173, 9, 64);
+    font-weight: 500;
+    font-size: 21px;
+    transition: 0.25s ease;
+}
+
+.comment-adder:hover {
+    scale: 1.15;
+    color: rgb(226, 0, 75);
+    text-shadow: 4px 4px 7px rgba(226, 0, 75, 0.5);
+}
+.comment-title {
+    margin-top: 4px;
+    font-size: 22px;
+    color: rgb(138, 25, 25);
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+
+.comment-content {
+    font-family: 'Chakra Petch', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.comment-info {
+    width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid grey;
+    align-self: self-end;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.comment-info img {
+    width: 80px;
+    border-radius: 100%;
+}
+
+.commenter-profile {
+    padding-top: 16px;
+    font-weight: 600;
+    word-break: break-all;
+    font-size: 14px;
+}
+
+.commenter-profile span {
+    font-weight: 400;
+    word-break: keep-all;
+    margin-bottom: 0;
+}

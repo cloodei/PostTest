@@ -1,0 +1,58 @@
+.slider {
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border-radius: 20px;
+    width: 100%;
+    padding: 0 28px;
+    /* background-image: url(../imgs/1152x720_android-10-abstract-stock-4k.jpg); */
+    background-image: url(../imgs/cake-bg-img7.jpg);
+}
+
+.slider-container {
+    display: flex;
+    padding-bottom: 32px;
+    transition: 0.5s ease-in-out;
+    gap: 28px;
+}
+
+.slide {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 62%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding-bottom: 1px;
+    font-size: 32px;
+    color: #3f3f3f;
+    overflow: hidden;
+    border: 1px solid #616161;
+    transition: 0.3s ease;
+}
+
+.slide-btn:hover {
+    background-color: #2a2936;
+    border: none;
+    color: #dadada;
+    font-size: 44px;
+}
+
+.prev {
+    left: -5.75%;
+}
+
+.next {
+    right: -5.75%;
+}

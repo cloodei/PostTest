@@ -1,0 +1,464 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.number-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.number-input-container button {
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input-container button:before,
+.number-input-container button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    transform: translate(-50%, -50%);
+}
+
+.number-input-container button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input-container button {
+    width: 2.6rem;
+    height: .7rem;
+}
+
+.number-input-container button.minus {
+    padding-left: 10px;
+}
+
+.number-input-container button:before,
+.number-input-container button:after {
+    width: .9rem;
+    background-color: #1c8dff;
+}
+
+.cash-tag {
+    flex: 1;
+}
+
+.max-fit-content {
+    max-width: fit-content;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.max-width-input {
+    max-width: 32px;
+}
+
+.user-input-number {
+    text-align: center;
+}
+
+.form-input {
+    padding: 10px 20px;
+    transition: 0.25s ease;
+    background-color: #16171b;
+    border: 1px solid #5160be;
+    color: white;
+}
+
+.form-input:focus {
+    border-color: #7ae0ff;
+    box-shadow: none;
+    background-color: inherit;
+    color: white;
+}
+
+.form-field {
+    position: relative;
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    margin: 0;
+    color: #696dbd;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.form-input:not(:placeholder-shown) + .form-label {
+    color: #696dbd;
+}
+
+.form-input:focus + .form-label {
+    color: #7ae0ff;
+}
+
+.form-input:not(:placeholder-shown) + .form-label,
+.form-input:focus + .form-label {
+    top: -1px;
+    padding: 0px 5px;
+    background-color: #16171b;
+}
+
+#Payment-box {
+    color: #b6cdff;
+}
+
+.contact-redirect {
+    color: #6873d3;
+}
+
+.cart-discount {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.cart-total {
+    margin-top: 8px;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+.cart-cost {
+    color: #53bedf;
+}
+
+.cart-discount-price {
+    color: #53bedf;
+}
+
+.cart-total h5,
+.cart-total h4 {
+    color: #3aa6c7;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-shadow: -4px 5px 12px rgba(0, 153, 255, 0.4);
+}
+
+.payment-container {
+    padding: 32px;
+    padding-right: 24px;
+    padding-top: 6px;
+    padding-bottom: 0;
+}
+ 
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+  
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.7s forwards;
+}
+ 
+.slower-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+  
+.slower-fade-out {
+    opacity: 1;
+    animation: fadeOut 1s forwards;
+}
+ 
+.faster-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+  
+.faster-fade-out {
+    opacity: 1;
+    animation: fadeOut 0.4s forwards;
+}
+  
+@keyframes fadeIn {
+    0% { 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+} 
+
+.form-payment-btns {
+    /* background-color: #252536; */
+    border: 1px solid #873beb;
+    color: #bd6cff;
+}
+
+.form-payment-btns:hover {
+    background-color: #58516e;
+    color: #d6caff;
+    border-color: #58516e;
+}
+
+.payment-btn {
+    border: none;
+    padding: 0;
+    width: 132px;
+    height: 144px;
+    transition: 0.3s ease;
+}
+
+.payment-btn:hover {
+    scale: 1.17;
+}
+
+.cart-product-card {
+    padding-top: 12px;
+    border-top: 1px solid rgba(128, 128, 128, 0.651);
+}
+
+.final-price {
+    min-width: 92px;
+    color: #0ee24e;
+    font-size: 20px;
+    margin-left: 0px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+}
+
+.cart-redirect {
+    margin: 12px 0;
+    font-size: 25px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.cart-redirect-header {
+    width: 100%;
+    padding-left: 8px;
+    margin: 0;
+}
+
+.cart-redirect-header a {
+    font-size: 18px;
+    color: #4295e7;
+}
+
+.cart-product-name {
+    color: rgb(58, 11, 11) !important;
+}
+
+.remove-item-btn {
+    color: #0080ff;
+}
+
+.payment-form {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.confirmation-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.confirmation-content h2 {
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: "DM Sans", serif;
+}
+  
+.confirmation-content button {
+    background-color: #1266f1;
+    color: white;
+    width: 60%;
+    padding: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-confirmation-btns {
+    display: flex;
+    color: white;
+    justify-content: center;
+    gap: calc(10%);
+}
+
+.close-confirmation-btns button {
+    padding: 6px 52px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.popup {
+    width: 100%;
+    margin: auto auto;
+    position: absolute;
+    text-align: center;
+    z-index: 1000;
+    font-size: 14px;
+    top: -42px;
+    left: 0;
+    padding: 4px 4px;
+    border-radius: 8px;
+    color: #dbd7e7;
+    font-weight: 500;
+    background-color: #cc0033;
+}
+
+.popup:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.popup:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 8px;
+    z-index: 999;
+    background-color: #cc0033;
+}
+
+.popup.arrow-top:before {
+    left: calc(50% - 10px);
+    top: -8px;
+}
+.popup.arrow-right:before {
+    top: calc(50% - 10px);
+    right: -8px;
+}
+.popup.arrow-bottom:before {
+    left: calc(50% - 10px);
+    bottom: -4px;
+}
+.popup.arrow-left:before {
+    top: calc(50% - 10px);
+    left: -8px;
+}
+
+.popup-wrapper {
+    border-radius: 4px;
+    position: relative;
+    z-index: 999;
+}
+
+.shopping-cart {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-color: #a0a0a0;
+}
+
+.clear-all-btn {
+    position: absolute;
+    bottom: -12px;
+    right: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #830000c5;
+    transition: 0.25s ease;
+}
+
+.clear-all-btn i {
+    margin-left: 6px;
+}
+
+.clear-all-btn:hover {
+    color: #ff2c2c;
+}
+
+.payment-form .open-drawer-button {
+    color: #0bb473;
+    background-color: #b6ffd93b;
+    border-color: #0bb473;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.payment-form .open-drawer-button:hover {
+    color: white;
+    background-color: #00c943cb;
+    border-color: transparent;
+}
+
+.open-drawer-checkout-button {
+    color: #06ad6d;
+    position: absolute;
+    bottom: -16px;
+    left: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover {
+        color: #06ff8b;
+    }
+}
+
+.open-drawer-checkout-button svg {
+    margin-left: 5px;
+}

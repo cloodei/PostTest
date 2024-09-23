@@ -1,0 +1,95 @@
+body > .modal-backdrop.fade.show {
+    background-color: rgba(0, 0, 0, 0.45);
+    opacity: 1;
+}
+
+.modal-content.custom-long-modal {
+    background-color: #ffffff;
+    box-shadow: rgba(129, 170, 224, 0.35) 0px 24px 144px 4px;
+}
+
+.modal-header.custom-modal-border {
+    border-bottom-color: #394e9498;
+}
+
+.modal-header.custom-modal-border > button.btn-close {
+    color: #31415e;
+    opacity: 1;
+    font-size: 32px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    transition: 0.15s ease;
+}
+
+.modal-header.custom-modal-border > button.btn-close:hover {
+    color: #209bff;
+}
+
+.modal-footer.custom-modal-border {
+    border-top-color: #394e9498;
+}
+
+.custom-modal-border h5 {
+    color: #304057;
+    font-size: 24px;
+}
+
+.py-6 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.py-8 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.modal-dialog.custom-modal {
+    margin-top: 2%;
+}
+
+.modal-dialog.custom-modal-width {
+    max-width: 40%;
+}
+
+.close-comment-modal {
+    cursor: pointer;
+    background-color: #5a5cdd;
+    color: white;
+    padding: 6px 24px;
+    transition: 0.25s ease;
+}
+
+.close-comment-modal:hover {
+    background-color: #3b3ed8;
+    color: white;
+}
+
+.save-comment-modal {
+    cursor: pointer;
+    background-color: #1cdb7c;
+    color: white;
+    padding: 6px 16px;
+    transition: 0.25s ease;
+}
+
+.save-comment-modal:hover {
+    background-color: #00b445;
+    color: white;
+}
+
+.delete-comment-modal {
+    cursor: pointer;
+    background-color: #c9223e;
+    color: white;
+    padding: 6px 12px;
+    transition: 0.25s ease;
+}
+
+.delete-comment-modal:hover {
+    background-color: #f50d0d;
+    color: white;
+}

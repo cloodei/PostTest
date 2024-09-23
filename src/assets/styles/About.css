@@ -1,0 +1,97 @@
+.about-banner-bg {
+    background-image: url(../imgs/home-banner-bg.jpg);
+    padding-top: 20px;
+}
+
+.about-banner-container {
+    padding-top: 24px;
+    padding-bottom: 40px;
+}
+
+.about-banner-title {
+    padding: 8px;
+}
+
+.about-banner-title {
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.about-banner-title.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-titles h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 63px;
+    margin-bottom: 0px;
+    text-shadow: -3px 5px 6px rgb(140, 17, 255);
+    font-family: "Kalnia Glaze", cursive;
+}
+
+.image-container {
+    margin-top: 16px;
+    width: 100%;
+    gap: 32px;
+}
+
+.image-container img {
+    width: 33.33%;
+    object-fit: cover;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+}
+
+.image-container .about-us-image-2 {
+    width: 27.5%;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+.image-container .about-us-image-3 {
+    width: 30%;
+    object-fit: cover;
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+
+.about-contents {
+    height: auto;
+}
+
+.content-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    letter-spacing: -2px;
+}
+
+.content-body {
+    text-align: center;
+    font-size: 20px;
+}
+
+#VeryUniqueID .content-body {
+    text-align: start;
+}
+
+.map-container {
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: opacity 0.65s ease-in, transform 0.65s ease-in;
+}
+
+.map-container.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}

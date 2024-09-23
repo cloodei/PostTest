@@ -1,0 +1,96 @@
+:root {
+    --px-2: 0;
+}
+
+.slide-card {
+    border: 2px solid transparent;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+.slide-card:hover {
+    scale: 1.06;
+}
+
+.targetted {
+    scale: 1.1;
+    border: 2px solid rgba(199, 0, 76, 0.65);
+    box-shadow: rgba(207, 0, 79, 0.65) 0px 20px 28px -2px, rgba(207, 0, 79, 0.7) 0px 18px 32px -5px !important;
+}
+
+.targetted a {
+    width: 100%;
+    opacity: 2;
+    position: absolute;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white !important;
+    font-weight: 700;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: 0.25s ease;
+    background-color: #3a322b6c;
+}
+
+.image-cover {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white !important;
+    font-weight: 700;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: 0.25s ease;
+}
+
+.slide-card:hover .image-cover:hover {
+    opacity: 2;
+    background-color: #3a322b6c;
+}
+
+.mr-6 {
+    margin-right: 24px !important;
+}
+
+.new-btn {
+    border-color: blueviolet;
+    color: blueviolet;
+}
+
+.sale-img {
+    width: 108px;
+    position: absolute;
+    top: -32px;
+    right: -23px;
+}
+
+.best-seller-img {
+    width: 108px;
+    position: absolute;
+    top: -34px;
+    left: -16px;
+}
+
+.new-btn:hover {
+    color: white;
+    background-color: #4223cca2;
+    border: none;
+}
+
+.item-title {
+    height: 50px;
+}
+
+.official-slide-card .card-body {
+    display: grid;
+}

@@ -1,0 +1,184 @@
+.products-view-full {
+    min-height: 100vh;
+    background: linear-gradient(to top, #362b63 0%, #33001f 50%, #262344 100%);
+    background-repeat: repeat-y;
+}
+
+#ProductsContainer {
+    --custom-container-width: 95%;
+    max-width: var(--custom-container-width);
+    width: var(--custom-container-width);
+    margin: 0 auto;
+}
+
+.products-view-header {
+    margin: 0;
+    position: relative;
+    padding: 18px 0;
+    padding-bottom: 28px;
+    text-align: center;
+    font-weight: 400;
+    color: #b63753;
+    text-shadow: 0 0px 16px #b63753;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
+}
+
+.products-view-header .special-root-products {
+    color: #be0b47;
+    position: absolute;
+    text-shadow: none;
+    right: 5%;
+    font-size: 18px;
+}
+
+a.special-products-redirect {
+    letter-spacing: -1px;
+    z-index: 20;
+    color: #b63753;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 18px;
+    font-weight: 400 !important;
+    position: absolute;
+    left: 6%;
+    bottom: 16px;
+    transition: 0.3s ease;
+}
+
+a.special-products-redirect:hover {
+    scale: 1.15;
+    color: #f32c2c;
+    font-weight: 400 !important;
+    font-size: 18px;
+}
+
+a.special-products-redirect i {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.control-btn-group {
+    --btn-position-offset: 16px;
+    display: flex;
+    padding: 4px var(--btn-position-offset);
+    padding-right: 0;
+    margin-top: 30px;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+}
+
+.control-btn-group .card-update {
+    position: absolute;
+    top: -28px;
+    left: var(--btn-position-offset);
+}
+
+.edit-product-btn {
+    background: linear-gradient(to top, #1e3f42 0%, #1c1a2b 100%);
+    color: #7ae0ff;
+    text-decoration: none;
+    border: 1px solid #7ae0ff;
+    padding: 4px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.edit-product-btn:hover {
+    background: none;
+    border-color: transparent;
+    background-color: #61ffff;
+    color: black;
+}
+
+.delete-product-btn {
+    background: linear-gradient(to top, #441f2f 0%, #1a1317 100%);
+    color: #fd295e;
+    border: 1px solid #f32c2c;
+    padding: 4px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.delete-product-btn:hover {
+    background: none;
+    border-color: transparent;
+    background-color: #ff3762;
+    color: black;
+}
+
+.products-view-card {
+    background: linear-gradient(to top, #252f47 0%, #171718 100%);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 0 12px 0 #000000;
+    color: #ebe860;
+}
+
+.db-announce {
+    position: absolute;
+    color: #e4e2ec;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 46px;
+    letter-spacing: -1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-text small {
+    color: #69857d;
+    font-size: 13px;
+}
+
+.card-body .card-text {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.card-body .card-text.card-description {
+    font-size: 13px;
+}
+
+.card-body h5.card-title {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.products-view-card-overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(to top, #3f9e9e67 0%, #1f1c3670 100%);
+    border-radius: 6px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.products-view-card-overlay:hover {
+    opacity: 1;
+}
+
+.filter-view {
+    background: linear-gradient(to top, #7c4359 0%, #4c3c83 100%);
+    border: 1px solid #7f00b9;
+    color: white;
+}
+
+.filter-view::placeholder {
+    color: white;
+}
+
+.filter-view:focus {
+    color: white;
+}
+
+.filter-view option {
+    background: linear-gradient(to top, #5e5096 0%, #262344 100%);  
+    color: black;
+}

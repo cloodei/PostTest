@@ -1,0 +1,15 @@
+.preview-info {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 28px;
+    color: rgb(96, 235, 200);
+    text-shadow: 0 0 8px #00ffaa;
+    font-weight: 500;
+}
+
+.products-view-card.d-flex.position-relative {
+    background: linear-gradient(to top, #0e3657 0%, #243333 100%);
+    box-shadow: rgba(114, 214, 189, 0.15) 0px 16px 80px, rgba(114, 214, 189, 0.1) 0px 12px 72px;
+}

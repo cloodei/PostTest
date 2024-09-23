@@ -1,0 +1,65 @@
+:root {
+    --gp-card-paddingX: 8px;
+}
+
+.gp-container-fluid {
+    background-image: url(../imgs/cake-bg-img4.jpg);
+}
+
+.gp-container-fluid h1 {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 66px;
+    text-shadow: -3px 5px 6px rgb(140, 17, 255);
+    font-family: "Kalnia Glaze", cursive;
+}
+
+.gp-container h4 {
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 4px 12px;
+}
+
+.gp-rows .col img {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 12px;
+}
+
+.gp-card {
+    border: none;
+    padding: 0 var(--gp-card-paddingX);
+    position: relative;
+    transition: scale 0.3s ease;
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in, scale 0.2s ease;
+}
+
+.gp-card:hover {
+    scale: 1.1;
+}
+
+.gp-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gp-image-cover {
+    width: calc(100% - var(--gp-card-paddingX) - var(--gp-card-paddingX));
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    border-radius: 12px;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: 0.35s ease;
+}
+
+.gp-card .gp-image-cover:hover {
+    opacity: 2;
+    background-color: #0000006c;
+}

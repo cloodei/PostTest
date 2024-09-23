@@ -1,0 +1,188 @@
+.add-product-bg {
+    background: linear-gradient(to top, #1f222c 0%, #171718 100%);
+    padding-bottom: 5vh;
+    position: relative;
+}
+
+.add-product-submit-btn {
+    width: 70%;
+    margin-bottom: 20px;
+    font-size: 28px;
+    padding: 6px 0;
+    padding-bottom: 8px;
+    font-weight: 500;
+    background: linear-gradient(to top, #20242e 0%, #171718 100%);
+    box-shadow: rgba(113, 0, 179, 0.4) 0px 5px 15px;
+    transition: all 0.2s ease, border-color 0.3s ease;
+}
+
+.add-product-submit-btn:hover {
+    border-color: transparent;
+    color: rgb(203, 210, 255);
+    background: linear-gradient(to bottom, #262438 0%, #352863 100%);
+}
+
+.form-input-add-product {
+    background-color: #16171b;
+    border: 1px solid #5160be;
+}
+
+.form-input-add-product:focus {
+    border-color: #7ae0ff;
+    background-color: transparent;
+    color: white;
+}
+
+.form-label-add-product {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    margin: 0;
+    color: #8d91df;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    color: #696dbd;
+}
+
+.form-input-add-product:focus + .form-label-add-product {
+    color: #7ae0ff;
+}
+
+.form-input-add-product:focus + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #1c1e25 0%, #16171b 100%);
+}
+
+#typeName.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #15171d 0%, #1a1b20 100%);
+}
+
+#typeDesc.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #181a20 0%, #19191d 100%);
+}
+
+#typePrice.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #1a1b20 0%, #1a1b20 100%);
+}
+
+#typeImage.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #1a1b20 0%, #1a1c24 100%);
+}
+
+#typeCate.form-input-add-product:not(:placeholder-shown) + .form-label-add-product {
+    top: -3px;
+    padding: 0px 5px;
+    background: linear-gradient(to bottom, #1a1b20 0%, #1a1b20 100%);
+}
+
+#typeImage, #typePrice, #typeDesc, #typeName, #typeCate {
+    background: linear-gradient(to top, #20242e 0%, #171718 100%);
+}
+
+#typeName.form-input-add-product:focus + .form-label-add-product {
+    background: linear-gradient(to bottom, #17181f 0%, #171718 100%);
+}
+
+#typeDesc.form-input-add-product:focus + .form-label-add-product {
+    background: linear-gradient(to bottom, #17191f 0%, #1a1a1f 100%);
+}
+
+#typePrice.form-input-add-product:focus + .form-label-add-product {
+    background: linear-gradient(to bottom, #1a1b20 0%, #1a1b20 100%);
+}
+
+#typeImage.form-input-add-product:focus + .form-label-add-product {
+    background: linear-gradient(to bottom, #1a1d24 0%, #18181b 100%);
+}
+
+.toggle-fake-drawer {
+    border: none;
+    z-index: 2;
+    padding: 14px 15px;
+    position: absolute;
+    top: 8px;
+    color: white;
+    border-radius: 28px;
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+
+.toggle-fake-drawer:hover {
+    background-color: #5d63b4;
+}
+
+.drawer-content {
+    padding: 2px;
+}
+
+.drawer-header {
+    font-size: 30px;
+    margin: 0 6px;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    padding-top: 16px;
+    text-align: center;
+    border-top: 1px solid #393e5a;
+}
+
+.drawer-list {
+    list-style-type: none;
+    padding: 12px 6px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+}
+
+.drawer-list a {
+    text-decoration: none;
+}
+
+.drawer-list-item {
+    padding: 8px;
+    padding-left: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0px 2px;
+    color: #16171b;
+    border-radius: 6px;
+    transition: 0.2s ease-in;
+}
+
+.drawer-list-item:hover {
+    background-color: #9ec3c5;
+}
+
+a.special-add-redirect {
+    letter-spacing: -1px;
+    color: #6048b6;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 20px;
+    position: absolute;
+    right: 5%;
+    bottom: 8px;
+    transition: 0.3s ease;
+}
+
+a.special-add-redirect:hover {
+    scale: 1.15;
+    color: #2cb8f0;
+}
+
+a.special-add-redirect i {
+    font-size: 22px;
+    margin-left: 6px;
+}

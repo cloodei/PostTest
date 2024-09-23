@@ -1,0 +1,82 @@
+.form-field .form-input {
+    font-size: 1.125rem;
+}
+
+.form-label-title-add::before {
+    content: "Add a title...";
+    font-size: 13px;
+}
+
+.form-field:focus-within .form-label-title-add::before {
+    content: "Add a title:";
+}
+
+.form-label-title-edit::before {
+    content: "Edit title...";
+    font-size: 13px;
+}
+
+.form-field:focus-within .form-label-title-edit::before {
+    content: "Edit title:";
+}
+
+.form-field .igf-label {
+    font-size: 13px;
+    color: #6d8f9e;
+}
+
+.form-field .form-label-comment-add,
+.form-field .form-label-comment-edit {
+    top: 26px;
+    left: 20px;
+}
+
+.form-label-comment-add::before {
+    content: "Add a comment...";
+    font-size: 13px;
+}
+
+.form-field:focus-within .form-label-comment-add::before {
+    content: "Add a comment!";
+}
+
+.form-label-comment-edit::before {
+    content: "Edit comment...";
+    font-size: 13px;
+}
+
+.form-field:focus-within .form-label-comment-edit::before {
+    content: "Edit comment!";
+}
+
+.form-field .form-textarea {
+    min-height: calc(1.5em + .75rem + calc(var(--bs-border-width)* 2) + 8.125rem + 10px);
+}
+
+.form-input.form-input-text {
+    color: #36538a;
+}
+
+.form-input.form-input-text:not(:placeholder-shown) {
+    background-color: #ffffff;
+}
+
+.form-input:not(:placeholder-shown) + .form-label.igf-label {
+    color: #83acbe;
+    background-color: #ffffff;
+}
+
+.form-field:focus-within .form-label.igf-label {
+    color: #003cbd;
+    background-color: #ffffff;
+}
+
+.form-input.form-input-text:focus {
+    border-color: #003cbd;
+    color: black;
+}
+
+.form-input.form-input-text {
+    border-color: #a0d4ec;
+    background-color: #ffffff;
+}

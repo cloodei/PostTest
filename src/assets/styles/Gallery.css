@@ -1,0 +1,254 @@
+.product {
+    padding: 24px 12px;
+    border-radius: 28px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: white;
+}
+
+.col {
+    flex: 0 0 20%;
+}
+
+.shop-col {
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: opacity 0.35s ease-in, transform 0.7s ease-in;
+}
+
+.shop-col.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.full-gallery-container {
+    padding: 0;
+}
+
+.container-bg {
+    background-repeat: repeat;
+    border-top: 1px solid grey;
+    background-image: url(../imgs/home-banner-bg.jpg);
+}
+
+.gallery-container {
+    display: flex;
+    padding: 32px 0;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.mb-16 {
+    margin-bottom: 64px;
+}
+
+.custom-search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+  
+.custom-search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 11px 24px;
+    transition: 0.25s ease;
+    background-color: #fff;
+    border: 1px solid #a7a7a7;
+}
+  
+.custom-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    transition: 0.25s ease;
+}
+
+.custom-form-field {
+    position: relative;
+}
+
+.custom-form-label {
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    color: #707070;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.custom-form-label::before {
+    content: "Search products...";
+}
+
+.custom-search-bar:focus-within,
+.custom-search-input:not(:placeholder-shown) {
+  border-color: #008cff;
+}
+
+.custom-search-bar .custom-search-input:not(:placeholder-shown) {
+    border-color: #008cff;
+}
+
+.custom-search-bar:focus-within .custom-form-label {
+  top: -13px;
+  color: #007bffde;
+  display: block;
+  padding: 0px 3px;
+  background-color: white;
+}
+
+.custom-search-bar:focus-within .custom-form-label::before {
+    content: "Search products: ";
+}
+
+.has-content {
+    top: -13px;
+    color: #007bffde;
+    display: block;
+    padding: 0px 3px;
+    background-color: white;
+}
+
+.custom-dropdown-button:hover {
+  box-shadow: 0 0 14px rgba(0, 123, 255, 0.5);
+}
+
+.custom-dropdown-button:focus {
+  box-shadow: 0 0 14px #007bff80;
+}
+
+.custom-dropdown {
+    margin-left: 12px;
+    position: relative;
+    padding: 4px 0;
+    padding-bottom: 8px;
+    display: block;
+}
+  
+.custom-dropdown-button {
+    background-color: #5ec4ff52;
+    border: 1px solid #8f8f8f;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 48px;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.35s ease;
+}
+  
+.custom-dropdown-button::after {
+    margin-left: 6px;
+}
+
+.custom-dropdown-content {
+    display: block;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+    background-color: #f1f1f1;
+    min-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 6px;
+    z-index: 2;
+    border-radius: 6px;
+    visibility: hidden;
+}
+  
+.custom-dropdown:hover .custom-dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.custom-dropdown:focus-within .custom-dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.custom-dropdown-content a {
+    color: black;
+    text-align: center;
+    padding: 12px 32px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s ease;
+}
+  
+.custom-dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.custom-dropdown-content a:hover {
+  background-color: #5ec4ff52;
+}
+
+.custom-dropdown-content-active {
+  background-color: #5ec4ff52;
+  font-weight: 500;
+  text-decoration: underline !important;
+}
+
+.hidden {
+    opacity: 0 !important;
+    transform: translateY(-12px) !important;
+    visibility: hidden !important;
+}
+
+.dropdown-placeholder {
+    border-radius: 0;
+}
+
+.highlighted {
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5); /* Optional */
+    transition: box-shadow 0.3s ease, outline 0.3s ease;
+}
+
+.no-result {
+    font-size: 33px;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.gallery-product-container {
+    background-image: url(../imgs/cake-bg-img7.1.png);
+    background-color: #ebebeb;
+}
+
+.gallery-checkout-btn {
+    text-decoration: none;
+    padding-top: 4px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-family: 'DM Sans', serif;
+    padding-bottom: 6px;
+    padding-right: 4px;
+    margin-left: 18px;
+    text-shadow: -3px 4px 8px rgba(33, 168, 157, 0.45);
+    color: #10afa7c5;
+    transition: 0.3s ease;
+}
+
+.gallery-checkout-btn:hover {
+    scale: 1.16;
+    color: #00dd88;
+}
+
+.gallery-checkout-btn .MuiSvgIcon-root {
+    color: inherit;
+    margin-left: 6px;
+    transition: color 0.3s ease;
+}
+
+.gallery-checkout-btn:hover .MuiSvgIcon-root {
+    color: #00dd88;
+}

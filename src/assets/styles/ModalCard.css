@@ -1,0 +1,174 @@
+.bor-none {
+    border: none;
+}
+
+.modal-card-contents {
+    display: flex;
+    align-items: center;
+}
+
+.card-body {
+    padding-top: 2px;
+}
+
+.card-body .card-title {
+    font-size: 25px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.card-body .card-text {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.modal-item-btn {
+    padding: 8px 16px;
+    background-color: rgba(255, 224, 221, 0.288);
+    border: 1px solid salmon;
+    border-radius: 20px;
+    width: 85%;
+    color: #942a00;
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.3s ease;
+}
+
+.modal-item-btn:hover {
+    background-color: rgb(250, 128, 114);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.card-price {
+    font-size: 22px;
+    letter-spacing: -1px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.card-dollar-tag {
+    position: absolute;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    top: 4px;
+}
+
+.col-md-8 .card-body-modal-gallery {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.card-body .card-title-modal-gallery {
+    font-size: 23px;
+}
+
+.home-modal-card {
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 0;
+}
+
+.bubbly-button-modal-home {
+    --modal-btn-bg: salmon;
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-out 0.1s, box-shadow ease-in 0.2s, background-color ease 0.2s, color ease 0.2s;
+    box-shadow: rgb(250, 128, 114, 0.3) 0px 16px 30px -6px, rgb(250, 128, 114, 0.4) 0px 8px 16px -8px;
+
+    &:before, &:after {
+      position: absolute;
+      position: absolute;
+      content: '';
+      display: block;
+      width: 140%;
+      height: 100%;
+      left: -20%;
+      z-index: -1000;
+      transition: all ease-in-out 0.1s;
+      background-repeat: no-repeat;
+    }
+    
+    &:before{
+      display: none;
+      top: -85%;
+      background-image:  
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle,  transparent 20%, var(--modal-btn-bg) 20%, transparent 30%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%), 
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle,  transparent 10%, var(--modal-btn-bg) 15%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%);
+      background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%, 12% 12%;
+      background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%, 30% 60%;
+    }
+    
+    &:after{
+      display: none;
+      bottom: -85%;
+      background-image:  
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%), 
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle,  transparent 10%, var(--modal-btn-bg) 15%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%),
+      radial-gradient(circle, var(--modal-btn-bg) 20%, transparent 20%);
+      background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 12% 12%, 20% 20%;
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%, 35% 85%;
+  }
+   
+    &:active{
+      transform: scale(0.91);
+      background-color: darken(var(--modal-btn-bg), 25%);
+      color: rgba(250, 128, 114, 0.562);
+      box-shadow: 0 3px 25px rgba(255, 0, 55, 0.2);
+    }
+    
+    &.animate{
+      &:before{
+        display: block;
+        animation: topBubbles linear 0.2s forwards;
+      }
+      &:after{
+        display: block;
+        animation: bottomBubbles linear 0.2s forwards;
+      }
+    }
+}
+  
+  
+@keyframes topBubbles {
+    0%{
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%, 80% 95%;
+    }
+      50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%, 95% 35%;}
+   100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%, 75% 30%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%, 0% 0%;
+    }
+}
+  
+@keyframes bottomBubbles {
+    0%{
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%, 110% 5%;}
+   100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%, 115% 15%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%, 0% 0%;
+    }
+}

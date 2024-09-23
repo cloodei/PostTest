@@ -1,0 +1,139 @@
+.vw {
+    width: calc(200vw/3);
+}
+
+.contact-bg {
+    padding: 0;
+    background-color: #ececec;
+}
+
+.contact-bg h1 {
+    margin: 0;
+    padding: 18px 0;
+    font-size: 62px;
+    text-shadow: -4px 6px 7px rgb(184, 108, 255);
+    font-family: "Kalnia Glaze", cursive;
+    letter-spacing: -1px;
+}
+
+h1 {
+    font-size: 48px;
+    color: #333;
+    margin: 16px;
+    font-family: "Playfair Display", sans-serif;
+}
+
+.subtitle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 80%;
+    font-size: 18px;
+    color: #363636;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 16px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 18px 24px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 75px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-bottom: 0;
+}
+
+.form-lable {
+    margin-bottom: 10px;
+}
+
+.form-group textarea {
+    flex: 1;
+    padding: 20px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.email {
+    margin-left: 45%;
+}
+
+.btn-send {
+    padding: 16px;
+    width: 100%;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ad343e;
+    border: none;
+    border-radius: 75px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-send:hover {
+    background-color: #92271d;
+}
+
+.contact-info {
+    margin-top: 40px;
+    width: 100%;
+    padding: 32px 8px;
+}
+
+.contact-info div {
+    font-size: 1em;
+    color: #555;
+}
+
+.contact-info div p {
+    margin: 10px;
+    margin-left: 0;
+    font-size: 17px;
+}
+
+.contact-info div h3 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.contact-info div a {
+    color: #c1272d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.phone {
+    font-size: 24px;
+}
+
+*/ .contact-info div a:hover {
+    color: #a81f24;
+    text-decoration: underline;
+}

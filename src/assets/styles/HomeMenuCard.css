@@ -1,0 +1,26 @@
+.home-menu-card {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px, rgba(0, 0, 0, 0.22) 0px 10px 12px;
+}
+
+.home-menu-card:hover {
+    scale: 1.07;
+}
+
+.home-menu-buy-btn {
+    color: #d41a49;
+    margin-left: auto;
+    font-weight: 800;
+    font-size: 16px;
+    margin-right: auto;
+    justify-self: end;
+    background-color: transparent;
+    border: none;
+    font-family: 'DM Sans', serif;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.home-menu-buy-btn:hover {
+    scale: 1.2;
+    color: #c40031;
+}

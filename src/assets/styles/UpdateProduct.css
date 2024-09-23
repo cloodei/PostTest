@@ -1,0 +1,32 @@
+.confirmation-content button.close-btn-success {
+    background-color: #20b125;
+    color: #fff;
+}
+
+.confirmation-content button.close-btn-success:hover {
+    background-color: #0d8112;
+}
+
+.confirmation-content button.close-btn-danger {
+    background-color: #df0b40;
+    color: #fff;
+}
+
+.confirmation-content button.close-btn-danger:hover {
+    background-color: #a1051a;
+}
+
+.special-product-preview-btn {
+    position: absolute;
+    bottom: 8px;
+    left: 6%;
+    cursor: pointer;
+    color: #9578b8;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+.special-product-preview-btn:hover {
+    color: #ca71e0;
+    scale: 1.15;
+}
