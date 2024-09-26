@@ -14,7 +14,7 @@ export default function ProductsView() {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
     useEffect(async () => {
-        await fetch('https://be-sql.vercel.app/api/fakeproducts')
+        await fetch('https://hello-sql.vercel.app/api/fakeproducts')
         .then((res) => res.json())
         .then((data) => {
             setProducts(data);
@@ -23,7 +23,7 @@ export default function ProductsView() {
             setFetchErrors({ ...fetchErrors, fakeProducts: err });
         });
 
-        await fetch('https://be-sql.vercel.app/api/categories')
+        await fetch('https://hello-sql.vercel.app/api/categories')
         .then((res) => res.json())
         .then((data) => {
             setCategories(data);
@@ -47,7 +47,7 @@ export default function ProductsView() {
     }, [Products, search, category]);
 
     const handleDelete = (id) => {
-        fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`, {
+        fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`, {
             method: 'DELETE',
         })
         .then(() => {

@@ -25,7 +25,7 @@ export default function AddProduct() {
   const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
-    fetch('https://be-sql.vercel.app/api/categories')
+    fetch('https://hello-sql.vercel.app/api/fakecategories')
       .then(response => response.json())
       .then(data => {
         setCategories(data);
@@ -101,7 +101,7 @@ export default function AddProduct() {
 
   const myDBAddProduct = async (product) => {
     try {
-      const response = await fetch('https://be-sql.vercel.app/api/fakeproducts', {
+      const response = await fetch('https://hello-sql.vercel.app/api/fakeproducts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

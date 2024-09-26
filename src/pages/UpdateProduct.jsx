@@ -15,13 +15,13 @@ export default function AddProduct() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(1);
   useEffect(() => {
-    fetch('https://be-sql.vercel.app/api/categories')
+    fetch('https://hello-sql.vercel.app/api/categories')
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
       });
 
-    fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`)
+    fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`)
       .then((res) => res.json())
       .then((data) => {
         const Data = data[0];
@@ -114,7 +114,7 @@ export default function AddProduct() {
       return { success: true, message: 'No changes were made :(' };
     }
     try {
-      const response = await fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`, {
+      const response = await fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
