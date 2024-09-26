@@ -3,6 +3,7 @@ import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/AddProduct.css'
 import { Link } from "react-router-dom";
 import { Drawer } from '@mui/material';
+import CircularProgress from "@mui/material";
 import FakeAddModal from "../components/FakeAddModal";
 
 export default function AddProduct() {
@@ -20,6 +21,7 @@ export default function AddProduct() {
   const [ok, setOk] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
   const timeoutRef = useRef([null, null]);
   const { open, toggleDrawer } = useContext(DrawerContext);
   const handleClose = () => setOpenModal(false);
@@ -128,6 +130,7 @@ export default function AddProduct() {
     clearTimeout(timeoutRef[0]);
     if (!handleValidation())
       return;
+    setLoading(true);
     let fakeDesc = description.trim();
     if (!fakeDesc) {
       fakeDesc = 'No description available.';
@@ -395,8 +398,12 @@ export default function AddProduct() {
               <hr className="mb-4" style={{ height: '2px', backgroundColor: '#96a4ff', opacity: 1, marginTop: '0' }} />
 
               <div className="d-flex align-items-center justify-content-center mt-4 pt-4">
-                <button type="button" onClick={handleSubmit} data-mdb-button-init data-mdb-ripple-init className="btn btn-block btn-lg form-payment-btns add-product-submit-btn">
-                  Add new Product
+                <button type="button" onClick={handleSubmit} disabled={loading} data-mdb-button-init data-mdb-ripple-init className={`btn btn-block btn-lg form-payment-btns add-product-submit-btn ${loading ? 'loading-btn' : ''}`}>
+                  {loading ?
+                    (
+                    <CircularProgress></CircularProgress>
+                    ) : null
+                  }
                 </button>
               </div>
             </form>

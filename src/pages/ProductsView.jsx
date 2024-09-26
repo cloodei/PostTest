@@ -24,14 +24,14 @@ export default function ProductsView() {
             setFetchErrors({ ...fetchErrors, fakeProducts: err });
         });
 
-        await fetch('https://hello-sql.vercel.app/api/categories')
-        .then((res) => res.json())
-        .then((data) => {
-            setCategories(data);
-        })
-        .catch((err) => {
-            setFetchErrors({ ...fetchErrors, categories: err });
-        });
+        // await fetch('https://hello-sql.vercel.app/api/categories')
+        // .then((res) => res.json())
+        // .then((data) => {
+        //     setCategories(data);
+        // })
+        // .catch((err) => {
+        //     setFetchErrors({ ...fetchErrors, categories: err });
+        // });
     }
     doSth();
     }, []);
@@ -140,7 +140,7 @@ export default function ProductsView() {
                     />
                 </h2> :
                 <>
-                    {categories &&
+                    {/* {categories &&
                     <div className="row px-2 pt-2 pb-4">
                         <input type="text" className="form-control filter-view" style={{ flex: 1 }} placeholder="Search Products..." value={search} onChange={(e) => setSearch(e.target.value)} />
                         <select style={{ maxWidth: '25%', borderRadius: '8px', marginLeft: '24px' }} className="filter-view" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -150,7 +150,7 @@ export default function ProductsView() {
                             ))}
                         </select>
                     </div>
-                    }
+                    } */}
                     <div className="row">
                         {filteredProducts.map((product, index) => (
                             <div className="col-3 card mb-3 products-view-card d-grid" key={index} style={{
