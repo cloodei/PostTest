@@ -56,7 +56,7 @@ function App() {
         </HandleTargetProvider>
       </CartProvider>
     </HandleFilterProvider>
-  {/* </Suspense> */}
+  // </Suspense> 
   )
 }
 
