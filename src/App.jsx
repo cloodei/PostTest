@@ -42,12 +42,10 @@ function App() {
                   <Route path='contactUs' element={<ContactUs />} />
                   <Route path='gallery' element={<GalleryPage />} />
                   <Route path='cart' element={<CartCheckout />} />
-                  <Route path='admin' element={<NoLayout />} >
-                    <Route index element={<AddProduct />} />
-                    <Route path='updateProduct/:id' element={<UpdateProduct />} />
-                    <Route path='productsView' element={<ProductsView />} />
-                  </Route>
                 </Route>
+                <Route path='/admin/addProduct' element={<AddProduct />} />
+                <Route path='/admin/updateProduct/:id' element={<UpdateProduct />} />
+                <Route path='/admin/productsView' element={<ProductsView />} />
               </Routes>
             </DrawerProvider>
           </ModalGalleryProvider>
