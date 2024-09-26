@@ -13,7 +13,8 @@ export default function ProductsView() {
     const [category, setCategory] = useState('all');
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
-    useEffect(async () => {
+    useEffect(() => {
+    async function doSth() {
         await fetch('https://hello-sql.vercel.app/api/fakeproducts')
         .then((res) => res.json())
         .then((data) => {
@@ -31,6 +32,8 @@ export default function ProductsView() {
         .catch((err) => {
             setFetchErrors({ ...fetchErrors, categories: err });
         });
+    }
+    doSth();
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
     const cardMargin = 12;
