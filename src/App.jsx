@@ -35,18 +35,18 @@ function App() {
           <ModalGalleryProvider>
             <DrawerProvider>
               <Routes>
-                <Route path='/' element={<Layout></Layout>}>
-                  <Route path='' element={<HomePage></HomePage>}></Route>
-                  <Route path='shop' element={<Shop></Shop>}></Route>
-                  <Route path='aboutUs' element={<AboutUs></AboutUs>}></Route>
-                  <Route path='contactUs' element={<ContactUs></ContactUs>}></Route>
-                  <Route path='gallery' element={<GalleryPage></GalleryPage>}></Route>
-                  <Route path='cart' element={<CartCheckout></CartCheckout>}></Route>
+                <Route path='/' element={<Layout/>} >
+                  <Route index element={<HomePage/>} />
+                  <Route path='shop' element={<Shop/>} />
+                  <Route path='aboutUs' element={<AboutUs/>} />
+                  <Route path='contactUs' element={<ContactUs />} />
+                  <Route path='gallery' element={<GalleryPage />} />
+                  <Route path='cart' element={<CartCheckout />} />
                 </Route>
-                <Route path='/admin' element={<NoLayout></NoLayout>}>
-                  <Route path='' element={<AddProduct></AddProduct>}></Route>
-                  <Route path='updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
-                  <Route path='productsView' element={<ProductsView></ProductsView>}></Route>
+                <Route path='/admin' element={<NoLayout />} >
+                  <Route index element={<AddProduct />} />
+                  <Route path='updateProduct/:id' element={<UpdateProduct />} />
+                  <Route path='productsView' element={<ProductsView />} />
                 </Route>
               </Routes>
             </DrawerProvider>
