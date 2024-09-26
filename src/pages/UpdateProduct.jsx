@@ -155,7 +155,7 @@ export default function AddProduct() {
     setIsFading(true);
     setShowConfirmation(true);
     timeoutRef[0] = setTimeout(() => {
-      navigate('/productsView');
+      navigate('/admin/productsView');
     }, 2000);
   };
 
@@ -165,7 +165,7 @@ export default function AddProduct() {
     setIsFading(false);
     setShowConfirmation(false);
     if(ok)
-      navigate('/productsView');
+      navigate('/admin/productsView');
   }
 
   const openProductPreview = () => {
@@ -253,20 +253,20 @@ export default function AddProduct() {
             </ul>
             <h3 className="drawer-header">ADMIN</h3>
             <ul className="drawer-list">
-              <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
+              <Link onClick={() => toggleDrawer(false)} to={'/admin/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-plus me-3"></i>Add Product</li>
               </Link>
-              <Link onClick={() => toggleDrawer(false)} to={'/updateProduct'}>
+              <Link onClick={() => toggleDrawer(false)} to={'/admin/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-pen me-3"></i>Update Product</li>
               </Link>
-              <Link onClick={() => toggleDrawer(false)} to={'/productsView'}>
+              <Link onClick={() => toggleDrawer(false)} to={'/admin/productsView'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-eye me-3"></i>View Products</li>
               </Link>
             </ul>
           </div>
         </Drawer>
         <h3 className="my-0 py-3 pt-5 text-center position-relative" id="Payment-box">
-          <Link to={'/productsView'} className="special-add-redirect">
+          <Link to={'/admin/productsView'} className="special-add-redirect">
             View Product List
             <i className="fa-solid fa-circle-right"></i>
           </Link>

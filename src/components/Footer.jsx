@@ -83,7 +83,7 @@ export default function Footer() {
                         <a href="https://www.instagram.com/" target='blank' className="social-icons socials-for-footer">
                             <img src={Instagram} alt="" />
                         </a>
-                        <a href="https://www.github.com/" target='blank' className="social-icons socials-for-footer">
+                        <a href="https://github.com/cloodei/PostTest" target='blank' className="social-icons socials-for-footer">
                             <img src={GitHub} alt="" />
                         </a>
                     </div>

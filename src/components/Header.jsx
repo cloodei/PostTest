@@ -39,18 +39,18 @@ function Header() {
                         </div>
                     </div>
                     <ul className='d-flex align-items-center justify-content-between m-0 p-1'>
-                        <Link className='social-icons' to={'/addProduct'}>
+                        <Link className='social-icons' to={'/admin/addProduct'}>
                             <img src={Twitter} alt="" />
                         </Link>
-                        <Link className='social-icons' to={'/productsView'}>
+                        <Link className='social-icons' to={'/admin/productsView'}>
                             <img src={Facebook} alt="" />
                         </Link>
                         <li className='social-icons'>
                             <img src={Instagram} alt="" />
                         </li>
-                        <li className='social-icons'>
+                        <a href='https://github.com/cloodei/PostTest' className='social-icons' style={{ textDecoration: 'none' }}>
                             <img src={GitHub} alt="" />
-                        </li>
+                        </a>
                     </ul>
                 </div>
             </div>

@@ -45,9 +45,9 @@ function App() {
                   <Route path='cart' element={<CartCheckout></CartCheckout>}></Route>
                 </Route>
                 <Route path='/admin' element={<NoLayout></NoLayout>}>
-                  <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
-                  <Route path='/updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
-                  <Route path='/productsView' element={<ProductsView></ProductsView>}></Route>
+                  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+                  <Route path='updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
+                  <Route path='productsView' element={<ProductsView></ProductsView>}></Route>
                 </Route>
               </Routes>
             </DrawerProvider>
