@@ -25,7 +25,7 @@ export default function AddProduct() {
   const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
-    fetch('https://hello-sql.vercel.app/api/fakecategories')
+    fetch('https://hello-sql.vercel.app/api/categories')
       .then(response => response.json())
       .then(data => {
         setCategories(data);
