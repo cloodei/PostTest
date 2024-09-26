@@ -44,11 +44,11 @@ function App() {
                   <Route path='gallery' element={<GalleryPage></GalleryPage>}></Route>
                   <Route path='cart' element={<CartCheckout></CartCheckout>}></Route>
                 </Route>
-                  <Route path='/' element={<NoLayout></NoLayout>}>
-                    <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
-                    <Route path='updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
-                    <Route path='productsView' element={<ProductsView></ProductsView>}></Route>
-                  </Route>
+                <Route path='/productsView' element={<NoLayout></NoLayout>}>
+                  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+                  <Route path='updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
+                  <Route path='' element={<ProductsView></ProductsView>}></Route>
+                </Route>
               </Routes>
             </DrawerProvider>
           </ModalGalleryProvider>
