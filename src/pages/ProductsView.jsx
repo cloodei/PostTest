@@ -11,7 +11,7 @@ export default function ProductsView() {
     // const [categories, setCategories] = useState(null);
     // const [search, setSearch] = useState('');
     // const [category, setCategory] = useState('all');
-    const [filteredProducts, setFilteredProducts] = useState([]);
+    // const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
     useEffect(() => {
     async function doSth() {
@@ -39,13 +39,13 @@ export default function ProductsView() {
     const cardMargin = 12;
     const cardPadding = 6;
 
-    useEffect(() => {
-        if (category === 'all') {
-            setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase())} ));
-        } else {
-            setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase()) && product.category_id == category} ));
-        }
-    }, [Products, search, category]);
+    // useEffect(() => {
+    //     if (category === 'all') {
+    //         setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase())} ));
+    //     } else {
+    //         setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase()) && product.category_id == category} ));
+    //     }
+    // }, [Products, search, category]);
 
     const handleDelete = (id) => {
         fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`, {
@@ -152,7 +152,7 @@ export default function ProductsView() {
                     </div>
                     } */}
                     <div className="row">
-                        {filteredProducts.map((product, index) => (
+                        {Products.map((product, index) => (
                             <div className="col-3 card mb-3 products-view-card d-grid" key={index} style={{
                                 border: 'none',
                                 marginRight: `${cardMargin / 2}px`,
