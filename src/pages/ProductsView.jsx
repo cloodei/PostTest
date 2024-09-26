@@ -71,7 +71,7 @@ export default function ProductsView() {
     <>
         <div className="container-fluid products-view-full">
             <h1 className="products-view-header">
-                <Link to={'/admin/addProduct'} className="special-products-redirect">
+                <Link to={'/addProduct'} className="special-products-redirect">
                     <i className="fa-regular fa-circle-left"></i>
                     Add Product
                 </Link>
@@ -113,13 +113,13 @@ export default function ProductsView() {
 
                     <h3 className="drawer-header">ADMIN</h3>
                     <ul className="drawer-list">
-                        <Link onClick={() => toggleDrawer(false)} to={'/admin/addProduct'}>
+                        <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                             <li className="drawer-list-item"><i className="fa-solid fa-plus me-3"></i>Add Product</li>
                         </Link>
-                        <Link onClick={() => toggleDrawer(false)} to={'/admin/addProduct'}>
+                        <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                             <li className="drawer-list-item"><i className="fa-solid fa-pen me-3"></i>Update Product</li>
                         </Link>
-                        <Link onClick={() => toggleDrawer(false)} to={'/admin/productsView'}>
+                        <Link onClick={() => toggleDrawer(false)} to={'/productsView'}>
                             <li className="drawer-list-item"><i className="fa-solid fa-eye me-3"></i>View Products</li>
                         </Link>
                     </ul>

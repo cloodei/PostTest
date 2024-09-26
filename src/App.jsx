@@ -1,5 +1,17 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
+import HomePage from './pages/HomePage.jsx';
+import Shop from './pages/Shop.jsx';
+import AboutUs from './pages/AboutUs.jsx';
+import ContactUs from './pages/ContactUs.jsx';
+import GalleryPage from './pages/GalleryPage.jsx';
+import CartCheckout from './pages/CartCheckout.jsx';
+import AddProduct from './pages/AddProduct.jsx';
+import UpdateProduct from './pages/UpdateProduct.jsx';
+import ProductsView from './pages/ProductsView.jsx';
+import Layout from './components/Layout.jsx';
+import NoLayout from './components/NoLayout.jsx';
 // const HomePage = React.lazy(() => import('./pages/HomePage.jsx'));
 // const Shop = React.lazy(() => import('./pages/Shop.jsx'));
 // const AboutUs = React.lazy(() => import('./pages/AboutUs.jsx'));
@@ -15,7 +27,6 @@ import { HandleTargetProvider } from './contexts/HandleTargetContext.jsx';
 import { ModalGalleryProvider } from './contexts/ModalGalleryContext.jsx';
 import { DrawerProvider } from './contexts/FakeDrawerContext.jsx';
 import CartProvider from './contexts/CartContext.jsx';
-import AppRoutes from './routes.jsx';
 
 function App() {
   return (
@@ -24,9 +35,19 @@ function App() {
         <HandleTargetProvider>
           <ModalGalleryProvider>
             <DrawerProvider>
-              <Router>
-                <AppRoutes />
-              </Router>
+              <Routes>
+                <Route path='/' element={<Layout></Layout>}>
+                  <Route index element={<HomePage></HomePage>}></Route>
+                  <Route path='shop' element={<Shop></Shop>}></Route>
+                  <Route path='aboutUs' element={<AboutUs></AboutUs>}></Route>
+                  <Route path='contactUs' element={<ContactUs></ContactUs>}></Route>
+                  <Route path='gallery' element={<GalleryPage></GalleryPage>}></Route>
+                  <Route path='cart' element={<CartCheckout></CartCheckout>}></Route>
+                </Route>
+                <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
+                <Route path='/updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
+                <Route path='/productsView' element={<ProductsView></ProductsView>}></Route>
+              </Routes>
             </DrawerProvider>
           </ModalGalleryProvider>
         </HandleTargetProvider>
@@ -36,18 +57,3 @@ function App() {
 }
 
 export default App;
-
-
-{/* <Routes>
-<Route path='/' element={<Layout/>} >
-  <Route index element={<HomePage/>} />
-  <Route path='shop' element={<Shop/>} />
-  <Route path='aboutUs' element={<AboutUs/>} />
-  <Route path='contactUs' element={<ContactUs />} />
-  <Route path='gallery' element={<GalleryPage />} />
-  <Route path='cart' element={<CartCheckout />} />
-</Route>
-<Route path='/admin/addProduct' element={<AddProduct />} />
-<Route path='/admin/updateProduct/:id' element={<UpdateProduct />} />
-<Route path='/admin/productsView' element={<ProductsView />} />
-</Routes> */}

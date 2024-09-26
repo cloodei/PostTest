@@ -39,10 +39,10 @@ function Header() {
                         </div>
                     </div>
                     <ul className='d-flex align-items-center justify-content-between m-0 p-1'>
-                        <Link className='social-icons' to={'/admin/addProduct'}>
+                        <Link className='social-icons' to={'/addProduct'}>
                             <img src={Twitter} alt="" />
                         </Link>
-                        <Link className='social-icons' to={'/admin/productsView'}>
+                        <Link className='social-icons' to={'/productsView'}>
                             <img src={Facebook} alt="" />
                         </Link>
                         <li className='social-icons'>
