@@ -1,6 +1,5 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { CircularProgress } from '@mui/material';
 import HomePage from './pages/HomePage.jsx';
 import Shop from './pages/Shop.jsx';
 import AboutUs from './pages/AboutUs.jsx';
@@ -45,7 +44,7 @@ function App() {
                   <Route path='cart' element={<CartCheckout></CartCheckout>}></Route>
                 </Route>
                 <Route path='/admin' element={<NoLayout></NoLayout>}>
-                  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+                  <Route path='' element={<AddProduct></AddProduct>}></Route>
                   <Route path='updateProduct/:id' element={<UpdateProduct></UpdateProduct>}></Route>
                   <Route path='productsView' element={<ProductsView></ProductsView>}></Route>
                 </Route>
