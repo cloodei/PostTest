@@ -3,7 +3,7 @@ import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/AddProduct.css'
 import { Link } from "react-router-dom";
 import { Drawer } from '@mui/material';
-const FakeAddModal = React.lazy(() => import('../components/FakeAddModal'));
+import FakeAddModal from "../components/FakeAddModal";
 
 export default function AddProduct() {
   const [isFading, setIsFading] = useState(false);
@@ -25,7 +25,7 @@ export default function AddProduct() {
   const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/categories')
+    fetch('https://be-sql.vercel.app/api/categories')
       .then(response => response.json())
       .then(data => {
         setCategories(data);
@@ -101,7 +101,7 @@ export default function AddProduct() {
 
   const myDBAddProduct = async (product) => {
     try {
-      const response = await fetch('http://localhost:3001/api/fakeproducts', {
+      const response = await fetch('https://be-sql.vercel.app/api/fakeproducts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -12,23 +12,24 @@ export default function ProductsView() {
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('all');
     const [filteredProducts, setFilteredProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3001/api/fakeProducts')
+    const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
+    useEffect(async () => {
+        await fetch('https://be-sql.vercel.app/api/fakeproducts')
         .then((res) => res.json())
         .then((data) => {
             setProducts(data);
         })
         .catch((err) => {
-            console.error(err);
+            setFetchErrors({ ...fetchErrors, fakeProducts: err });
         });
 
-        fetch('http://localhost:3001/api/categories')
+        await fetch('https://be-sql.vercel.app/api/categories')
         .then((res) => res.json())
         .then((data) => {
             setCategories(data);
         })
         .catch((err) => {
-            console.error(err);
+            setFetchErrors({ ...fetchErrors, categories: err });
         });
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
@@ -46,7 +47,7 @@ export default function ProductsView() {
     }, [Products, search, category]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3001/api/fakeProducts/${id}`, {
+        fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`, {
             method: 'DELETE',
         })
         .then(() => {

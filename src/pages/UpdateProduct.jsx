@@ -3,7 +3,7 @@ import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/UpdateProduct.css';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Drawer } from '@mui/material';
-const FakeProductsModal = React.lazy(() => import('../components/FakeProductsModal'));
+import FakeProductsModal from "../components/FakeProductsModal";
 
 export default function AddProduct() {
   const { id } = useParams();
@@ -15,13 +15,13 @@ export default function AddProduct() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(1);
   useEffect(() => {
-    fetch('http://localhost:3001/api/categories')
+    fetch('https://be-sql.vercel.app/api/categories')
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
       });
 
-    fetch(`http://localhost:3001/api/fakeProducts/${id}`)
+    fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`)
       .then((res) => res.json())
       .then((data) => {
         const Data = data[0];
@@ -114,7 +114,7 @@ export default function AddProduct() {
       return { success: true, message: 'No changes were made :(' };
     }
     try {
-      const response = await fetch(`http://localhost:3001/api/fakeProducts/${id}`, {
+      const response = await fetch(`https://be-sql.vercel.app/api/fakeproducts/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -283,7 +283,7 @@ export default function AddProduct() {
                 {showPointers.name ? (
                   <div className={`popup arrow-bottom ${isPointerFading ? 'fade-in' : 'fade-out'}`}>
                     <div className="popup-wrapper">
-                      Invalid name. No special characters and length must be &gt; 8.
+                      Invalid name. No special characters and length must be &gt; 4.
                     </div>
                   </div>
                 ) : null}
