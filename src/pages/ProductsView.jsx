@@ -37,8 +37,6 @@ export default function ProductsView() {
     const cardPadding = 6;
 
     useEffect(() => {
-        console.log(category);
-        
         if (category === 'all') {
             setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase())} ));
         } else {
