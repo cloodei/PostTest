@@ -30,7 +30,6 @@ import CartProvider from './contexts/CartContext.jsx';
 
 function App() {
   return (
-  // <Suspense fallback={<h1 className='text-center' style={{ marginTop: '50vh', transform: 'translateY(-50%)', fontSize: '60px' }}>Hang On...<CircularProgress style={{ color: '#3f51b5', marginLeft: '12px' }}/></h1>}>
     <HandleFilterProvider>
       <CartProvider>
         <HandleTargetProvider>
@@ -56,7 +55,6 @@ function App() {
         </HandleTargetProvider>
       </CartProvider>
     </HandleFilterProvider>
-  // </Suspense> 
   )
 }
 
