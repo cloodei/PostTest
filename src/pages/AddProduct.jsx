@@ -2,8 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/AddProduct.css'
 import { Link } from "react-router-dom";
-import { Drawer } from '@mui/material';
-import CircularProgress from "@mui/material";
+import { Drawer, CircularProgress } from '@mui/material';
 import FakeAddModal from "../components/FakeAddModal";
 
 export default function AddProduct() {
