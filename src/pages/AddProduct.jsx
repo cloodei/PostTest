@@ -113,13 +113,16 @@ export default function AddProduct() {
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error Data:', errorData.error);
+        setLoading(false);
         return { success: false, message: errorData.error || 'Failed to add product' };
       }
   
       const data = await response.json();
+      setLoading(false);
       return { success: true, message: data.message };
     }
     catch (err) {
+      setLoading(false);
       return { success: false, message: err.message };
     }
   };
@@ -139,6 +142,7 @@ export default function AddProduct() {
       fakePrice = 0;
     }
     const handleAdding = await myDBAddProduct({ name, image, fakePrice, description: fakeDesc, category_id: parseInt(category) });
+    setLoading(false);
     if (!handleAdding.success) {
       handleFailure(handleAdding.message);
       return;

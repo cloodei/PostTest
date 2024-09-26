@@ -8,9 +8,9 @@ import '../assets/styles/ProductsView.css';
 export default function ProductsView() {
     // const Products = globalVar.mySQLData;
     const [Products, setProducts] = useState([]);
-    const [categories, setCategories] = useState(null);
-    const [search, setSearch] = useState('');
-    const [category, setCategory] = useState('all');
+    // const [categories, setCategories] = useState(null);
+    // const [search, setSearch] = useState('');
+    // const [category, setCategory] = useState('all');
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
     useEffect(() => {
