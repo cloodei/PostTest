@@ -13,27 +13,31 @@ export default function ProductsView() {
     // const [category, setCategory] = useState('all');
     // const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
-    useEffect(() => {
-    async function doSth() {
-        await fetch('https://hello-sql.vercel.app/api/fakeproducts')
-        .then((res) => res.json())
-        .then((data) => {
-            setProducts(data);
-        })
-        .catch((err) => {
-            setFetchErrors({ ...fetchErrors, fakeProducts: err });
-        });
+    const [querying, setQuerying] = useState(false);
 
-        // await fetch('https://hello-sql.vercel.app/api/categories')
-        // .then((res) => res.json())
-        // .then((data) => {
-        //     setCategories(data);
-        // })
-        // .catch((err) => {
-        //     setFetchErrors({ ...fetchErrors, categories: err });
-        // });
-    }
-    doSth();
+    useEffect(() => {
+        async function doSth() {
+            setQuerying(true);
+            await fetch('https://hello-sql.vercel.app/api/fakeproducts')
+            .then((res) => res.json())
+            .then((data) => {
+                setProducts(data);
+            })
+            .catch((err) => {
+                setFetchErrors({ ...fetchErrors, fakeProducts: err });
+            });
+
+            // await fetch('https://hello-sql.vercel.app/api/categories')
+            // .then((res) => res.json())
+            // .then((data) => {
+            //     setCategories(data);
+            // })
+            // .catch((err) => {
+            //     setFetchErrors({ ...fetchErrors, categories: err });
+            // });
+        }
+        doSth();
+        setQuerying(false);
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
     const cardMargin = 12;
@@ -129,16 +133,21 @@ export default function ProductsView() {
                 </div>
             </Drawer>
             <div className="container" id="ProductsContainer">
-                {Products.length === 0 ?
+                {querying ?
                 <h2 className="db-announce">
-                    Database is Empty...
+                    Fetching from database
                     <CircularProgress 
                         style={{
                             color: '#3f51b5',
-                            marginLeft: '12px',
+                            marginLeft: '14px',
                         }}
                     />
                 </h2> :
+                Products.length === 0 ? (
+                    <h2 className="db-announce">
+                        Database is empty...
+                    </h2>
+                ) :
                 <>
                     {/* {categories &&
                     <div className="row px-2 pt-2 pb-4">

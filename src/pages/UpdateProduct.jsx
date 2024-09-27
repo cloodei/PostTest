@@ -24,6 +24,8 @@ export default function AddProduct() {
     fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
+        
         setName((prevName) => data.name);
         setImage((prevImage) => data.image);
         setPrice((prevPrice) => data.price);
