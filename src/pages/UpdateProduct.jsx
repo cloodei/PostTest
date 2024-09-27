@@ -251,7 +251,7 @@ export default function AddProduct() {
           </div>
         </>
       )}
-      <div className="container-fluid add-product-bg" style={{ minWidth: '100vh' }}>
+      <div className="container-fluid add-product-bg" style={{ minHeight: '100vh' }}>
         <i onClick={() => toggleDrawer(true)} className="fa-solid fa-bars toggle-fake-drawer"></i>
         <Drawer open={open} onClose={() => toggleDrawer(false)}
           PaperProps={{
