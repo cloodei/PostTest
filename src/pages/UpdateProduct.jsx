@@ -25,7 +25,6 @@ export default function AddProduct() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
         setName((prevName) => data.name);
         setImage((prevImage) => data.image);
         setPrice((prevPrice) => data.price);
@@ -33,7 +32,7 @@ export default function AddProduct() {
         setCategory((prevCategory) => data.category_id);
         setInitialProduct((prevProduct) => data);
       });
-  }, [id]);
+  }, []);
   const navigate = useNavigate();
   const [isFading, setIsFading] = useState(false);
   const [showPointers, setShowPointers] = useState({});

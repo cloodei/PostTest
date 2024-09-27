@@ -13,7 +13,7 @@ export default function ProductsView() {
     // const [category, setCategory] = useState('all');
     // const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
-    const [querying, setQuerying] = useState(false);
+    const [querying, setQuerying] = useState(true);
 
     useEffect(() => {
         async function doSth() {

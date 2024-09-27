@@ -31,11 +31,14 @@
 }
 
 .add-product-submit-btn.loading-btn::before {
-    content: 'Adding ';
-    margin-right: 6px;
+    content: '';
     /* background: linear-gradient(to right, #2e6e81 0%, #1ebe9c 50%, #2e6e81 100%); */
     /* background-size: 200% 100%; */
     /* animation: loading 1.5s linear infinite; */
+}
+
+.add-product-submit-btn.loading-btn {
+    cursor: not-allowed;
 }
 
 @keyframes loading {
