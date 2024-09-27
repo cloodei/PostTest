@@ -5,6 +5,11 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { Drawer } from '@mui/material';
 import FakeProductsModal from "../components/FakeProductsModal";
 
+const testURL = 'http://localhost:3000/api/fakeproducts';
+const buildURL = 'https://hello-sql.vercel.app/api/fakeproducts';
+const categoriesURL = 'http://localhost:3000/api/categories';
+const realCategoriesURL = 'https://hello-sql.vercel.app/api/fakecategories';
+
 export default function AddProduct() {
   const { id } = useParams();
   const [initialProduct, setInitialProduct] = useState(null);
@@ -22,6 +27,7 @@ export default function AddProduct() {
   const [confirmationMessage, setConfirmationMessage] = useState('');
   const [ok, setOk] = useState(true);
   const [openModal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const timeoutRef = useRef([null, null]);
   const { open, toggleDrawer } = useContext(DrawerContext);
   const handleClose = () => setOpenModal(false);
@@ -29,7 +35,7 @@ export default function AddProduct() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('https://hello-sql.vercel.app/api/fakecategories');
+        const response = await fetch(realCategoriesURL);
         if (!response.ok) {
           throw new Error('Failed to fetch categories');
         }
@@ -44,7 +50,7 @@ export default function AddProduct() {
 
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`);
+        const response = await fetch(`${buildURL}/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch product');
         }
@@ -156,6 +162,7 @@ export default function AddProduct() {
     clearTimeout(timeoutRef[0]);
     if (!handleValidation())
       return;
+    setLoading(true);
     let fakeDesc = description.trim();
     if (!fakeDesc) {
       fakeDesc = 'No description available.';
@@ -165,6 +172,7 @@ export default function AddProduct() {
       fakePrice = 0;
     }
     const handleEditing = await myDBEditProduct({ name, image, fakePrice, description: fakeDesc, category_id: category });
+    setLoading(false);
     if (!handleEditing.success) {
       handleFailure(handleEditing.message);
       return;
@@ -208,7 +216,7 @@ export default function AddProduct() {
     else {
       fakeCategory = categories[category - 1];
     }
-    console.log(category, categories, fakeCategory);
+    console.log("Categories and such: ", category, categories, fakeCategory);
     return { name, image, price: fakePrice, description: fakeDesc, category: fakeCategory };
   }
 
@@ -408,8 +416,12 @@ export default function AddProduct() {
               <hr className="mb-4" style={{ height: '2px', backgroundColor: '#96a4ff', opacity: 1, marginTop: '0' }} />
 
               <div className="d-flex align-items-center justify-content-center mt-4 pt-4">
-                <button type="button" onClick={handleSubmit} data-mdb-button-init data-mdb-ripple-init className="btn btn-block btn-lg form-payment-btns add-product-submit-btn">
-                  Update Product
+                <button type="button" onClick={handleSubmit} data-mdb-button-init data-mdb-ripple-init className={`btn btn-block btn-lg form-payment-btns add-product-submit-btn update-btn-only ${loading ? 'loading-btn-update' : ''}`}>
+                  {loading ?
+                    (
+                      <CircularProgress></CircularProgress>
+                    ) : null
+                  }
                 </button>
               </div>
             </form>

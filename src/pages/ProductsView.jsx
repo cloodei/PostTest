@@ -5,8 +5,12 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/ProductsView.css';
 
+const testURL = 'http://localhost:3000/api/fakeproducts';
+const buildURL = 'https://hello-sql.vercel.app/api/fakeproducts';
+const categoriesURL = 'http://localhost:3000/api/categories';
+const realCategoriesURL = 'https://hello-sql.vercel.app/api/fakecategories';
+
 export default function ProductsView() {
-    // const Products = globalVar.mySQLData;
     const [Products, setProducts] = useState([]);
     // const [categories, setCategories] = useState(null);
     // const [search, setSearch] = useState('');
@@ -17,15 +21,14 @@ export default function ProductsView() {
 
     useEffect(() => {
         const doSth = async () => {
-            setQuerying(true);
-            await fetch('https://hello-sql.vercel.app/api/fakeproducts')
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data);
-            })
-            .catch((err) => {
-                setFetchErrors({ ...fetchErrors, fakeProducts: err });
-            });
+            await fetch(buildURL)
+                .then((res) => res.json())
+                .then((data) => {
+                    setProducts(data);
+                })
+                .catch((err) => {
+                    setFetchErrors({ ...fetchErrors, fakeProducts: err });
+                });
 
             // await fetch('https://hello-sql.vercel.app/api/categories')
             // .then((res) => res.json())
@@ -35,13 +38,9 @@ export default function ProductsView() {
             // .catch((err) => {
             //     setFetchErrors({ ...fetchErrors, categories: err });
             // });
-            return 1;
+            setQuerying(false);
         }
-        const doSthElse = async () => {
-            await doSth();
-        }
-        doSthElse();
-        setQuerying(false);
+        doSth();
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
     const cardMargin = 12;
@@ -201,7 +200,7 @@ export default function ProductsView() {
                                             <p className="card-text" style={{ marginBottom: '0px', }}>Pricing: ${product.price}</p>
                                         </div>
                                         <div className="control-btn-group">
-                                            <p className="card-text card-update"><small className="">Last updated: {getTimeDifference(product.updatedAt)}</small></p>
+                                            <p className="card-text card-update"><small className="">Last updated: {getTimeDifference(product.updatedat)}</small></p>
                                             <Link to={`/updateProduct/${product.id}`} className="edit-product-btn">Edit</Link>
                                             <button onClick={() => handleDelete(product.id)} className="delete-product-btn">Delete</button>
                                         </div>

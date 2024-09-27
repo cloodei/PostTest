@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import { Drawer, CircularProgress } from '@mui/material';
 import FakeAddModal from "../components/FakeAddModal";
 
+const testURL = 'http://localhost:3000/api/fakeproducts';
+const buildURL = 'https://hello-sql.vercel.app/api/fakeproducts';
+const categoriesURL = 'http://localhost:3000/api/categories';
+const realCategoriesURL = 'https://hello-sql.vercel.app/api/fakecategories';
+
 export default function AddProduct() {
   const [isFading, setIsFading] = useState(false);
   const [name, setName] = useState('');
@@ -26,7 +31,7 @@ export default function AddProduct() {
   const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
-    fetch('https://hello-sql.vercel.app/api/categories')
+    fetch(realCategoriesURL)
       .then(response => response.json())
       .then(data => {
         setCategories(data);
@@ -113,16 +118,13 @@ export default function AddProduct() {
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error Data:', errorData.error);
-        setLoading(false);
         return { success: false, message: errorData.error || 'Failed to add product' };
       }
   
       const data = await response.json();
-      setLoading(false);
       return { success: true, message: data.message };
     }
     catch (err) {
-      setLoading(false);
       return { success: false, message: err.message };
     }
   };
