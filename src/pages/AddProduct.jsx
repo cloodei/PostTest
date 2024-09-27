@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/AddProduct.css'
 import { Link } from "react-router-dom";
-import { Drawer } from '@mui/material';
+import { Drawer, CircularProgress } from '@mui/material';
 import FakeAddModal from "../components/FakeAddModal";
 
 export default function AddProduct() {
@@ -20,6 +20,7 @@ export default function AddProduct() {
   const [ok, setOk] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
   const timeoutRef = useRef([null, null]);
   const { open, toggleDrawer } = useContext(DrawerContext);
   const handleClose = () => setOpenModal(false);
@@ -112,13 +113,16 @@ export default function AddProduct() {
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error Data:', errorData.error);
+        setLoading(false);
         return { success: false, message: errorData.error || 'Failed to add product' };
       }
   
       const data = await response.json();
+      setLoading(false);
       return { success: true, message: data.message };
     }
     catch (err) {
+      setLoading(false);
       return { success: false, message: err.message };
     }
   };
@@ -128,6 +132,7 @@ export default function AddProduct() {
     clearTimeout(timeoutRef[0]);
     if (!handleValidation())
       return;
+    setLoading(true);
     let fakeDesc = description.trim();
     if (!fakeDesc) {
       fakeDesc = 'No description available.';
@@ -137,6 +142,7 @@ export default function AddProduct() {
       fakePrice = 0;
     }
     const handleAdding = await myDBAddProduct({ name, image, fakePrice, description: fakeDesc, category_id: parseInt(category) });
+    setLoading(false);
     if (!handleAdding.success) {
       handleFailure(handleAdding.message);
       return;
@@ -261,7 +267,7 @@ export default function AddProduct() {
               <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-plus me-3"></i>Add Product</li>
               </Link>
-              <Link onClick={() => toggleDrawer(false)} to={'/updateProduct'}>
+              <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-pen me-3"></i>Update Product</li>
               </Link>
               <Link onClick={() => toggleDrawer(false)} to={'/productsView'}>
@@ -395,8 +401,12 @@ export default function AddProduct() {
               <hr className="mb-4" style={{ height: '2px', backgroundColor: '#96a4ff', opacity: 1, marginTop: '0' }} />
 
               <div className="d-flex align-items-center justify-content-center mt-4 pt-4">
-                <button type="button" onClick={handleSubmit} data-mdb-button-init data-mdb-ripple-init className="btn btn-block btn-lg form-payment-btns add-product-submit-btn">
-                  Add new Product
+                <button type="button" onClick={handleSubmit} disabled={loading} data-mdb-button-init data-mdb-ripple-init className={`btn btn-block btn-lg form-payment-btns add-product-submit-btn ${loading ? 'loading-btn' : ''}`}>
+                  {loading ?
+                    (
+                    <CircularProgress></CircularProgress>
+                    ) : null
+                  }
                 </button>
               </div>
             </form>

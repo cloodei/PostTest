@@ -48,9 +48,9 @@ function Header() {
                         <li className='social-icons'>
                             <img src={Instagram} alt="" />
                         </li>
-                        <li className='social-icons'>
+                        <a href='https://github.com/cloodei/PostTest' className='social-icons' style={{ textDecoration: 'none' }}>
                             <img src={GitHub} alt="" />
-                        </li>
+                        </a>
                     </ul>
                 </div>
             </div>

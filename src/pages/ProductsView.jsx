@@ -8,12 +8,13 @@ import '../assets/styles/ProductsView.css';
 export default function ProductsView() {
     // const Products = globalVar.mySQLData;
     const [Products, setProducts] = useState([]);
-    const [categories, setCategories] = useState(null);
-    const [search, setSearch] = useState('');
-    const [category, setCategory] = useState('all');
-    const [filteredProducts, setFilteredProducts] = useState([]);
+    // const [categories, setCategories] = useState(null);
+    // const [search, setSearch] = useState('');
+    // const [category, setCategory] = useState('all');
+    // const [filteredProducts, setFilteredProducts] = useState([]);
     const [fetchErrors, setFetchErrors] = useState({ fakeProducts: null, categories: null });
-    useEffect(async () => {
+    useEffect(() => {
+    async function doSth() {
         await fetch('https://hello-sql.vercel.app/api/fakeproducts')
         .then((res) => res.json())
         .then((data) => {
@@ -23,28 +24,28 @@ export default function ProductsView() {
             setFetchErrors({ ...fetchErrors, fakeProducts: err });
         });
 
-        await fetch('https://hello-sql.vercel.app/api/categories')
-        .then((res) => res.json())
-        .then((data) => {
-            setCategories(data);
-        })
-        .catch((err) => {
-            setFetchErrors({ ...fetchErrors, categories: err });
-        });
+        // await fetch('https://hello-sql.vercel.app/api/categories')
+        // .then((res) => res.json())
+        // .then((data) => {
+        //     setCategories(data);
+        // })
+        // .catch((err) => {
+        //     setFetchErrors({ ...fetchErrors, categories: err });
+        // });
+    }
+    doSth();
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
     const cardMargin = 12;
     const cardPadding = 6;
 
-    useEffect(() => {
-        console.log(category);
-        
-        if (category === 'all') {
-            setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase())} ));
-        } else {
-            setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase()) && product.category_id == category} ));
-        }
-    }, [Products, search, category]);
+    // useEffect(() => {
+    //     if (category === 'all') {
+    //         setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase())} ));
+    //     } else {
+    //         setFilteredProducts(Products.filter((product) => { return product.name.trim().toLowerCase().includes(search.trim().toLowerCase()) && product.category_id == category} ));
+    //     }
+    // }, [Products, search, category]);
 
     const handleDelete = (id) => {
         fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`, {
@@ -118,7 +119,7 @@ export default function ProductsView() {
                         <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                             <li className="drawer-list-item"><i className="fa-solid fa-plus me-3"></i>Add Product</li>
                         </Link>
-                        <Link onClick={() => toggleDrawer(false)} to={'/updateProduct'}>
+                        <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                             <li className="drawer-list-item"><i className="fa-solid fa-pen me-3"></i>Update Product</li>
                         </Link>
                         <Link onClick={() => toggleDrawer(false)} to={'/productsView'}>
@@ -139,7 +140,7 @@ export default function ProductsView() {
                     />
                 </h2> :
                 <>
-                    {categories &&
+                    {/* {categories &&
                     <div className="row px-2 pt-2 pb-4">
                         <input type="text" className="form-control filter-view" style={{ flex: 1 }} placeholder="Search Products..." value={search} onChange={(e) => setSearch(e.target.value)} />
                         <select style={{ maxWidth: '25%', borderRadius: '8px', marginLeft: '24px' }} className="filter-view" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -149,9 +150,9 @@ export default function ProductsView() {
                             ))}
                         </select>
                     </div>
-                    }
+                    } */}
                     <div className="row">
-                        {filteredProducts.map((product, index) => (
+                        {Products.map((product, index) => (
                             <div className="col-3 card mb-3 products-view-card d-grid" key={index} style={{
                                 border: 'none',
                                 marginRight: `${cardMargin / 2}px`,

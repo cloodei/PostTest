@@ -256,7 +256,7 @@ export default function AddProduct() {
               <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-plus me-3"></i>Add Product</li>
               </Link>
-              <Link onClick={() => toggleDrawer(false)} to={'/updateProduct'}>
+              <Link onClick={() => toggleDrawer(false)} to={'/addProduct'}>
                 <li className="drawer-list-item"><i className="fa-solid fa-pen me-3"></i>Update Product</li>
               </Link>
               <Link onClick={() => toggleDrawer(false)} to={'/productsView'}>
