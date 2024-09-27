@@ -8,7 +8,7 @@ import FakeAddModal from "../components/FakeAddModal";
 const testURL = 'http://localhost:3000/api/fakeproducts';
 const buildURL = 'https://hello-sql.vercel.app/api/fakeproducts';
 const categoriesURL = 'http://localhost:3000/api/categories';
-const realCategoriesURL = 'https://hello-sql.vercel.app/api/fakecategories';
+const realCategoriesURL = 'https://hello-sql.vercel.app/api/categories';
 
 export default function AddProduct() {
   const [isFading, setIsFading] = useState(false);
