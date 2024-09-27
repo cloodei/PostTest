@@ -14,25 +14,6 @@ export default function AddProduct() {
   const [description, setDescription] = useState('');
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(1);
-  useEffect(() => {
-    fetch('https://hello-sql.vercel.app/api/categories')
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
-
-    fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setName((prevName) => data.name);
-        setImage((prevImage) => data.image);
-        setPrice((prevPrice) => data.price);
-        setDescription((prevDescription) => data.description);
-        setCategory((prevCategory) => data.category_id);
-        setInitialProduct((prevProduct) => data);
-      });
-  }, []);
   const navigate = useNavigate();
   const [isFading, setIsFading] = useState(false);
   const [showPointers, setShowPointers] = useState({});
@@ -45,6 +26,44 @@ export default function AddProduct() {
   const { open, toggleDrawer } = useContext(DrawerContext);
   const handleClose = () => setOpenModal(false);
 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch('https://hello-sql.vercel.app/api/fakecategories');
+        if (!response.ok) {
+          throw new Error('Failed to fetch categories');
+        }
+        const data = await response.json();
+        setCategories(data);
+      }
+      catch (error) {
+        console.error(error);
+      }
+    }
+    fetchCategories();
+
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch product');
+        }
+        const data = await response.json();
+        console.log(data);
+        setInitialProduct(data);
+        setName(data.name);
+        setImage(data.image);
+        setPrice(data.price);
+        setDescription(data.description);
+        setCategory(data.category_id);
+      }
+      catch (error) {
+        console.error(error);
+      }
+    }
+    fetchProduct();
+  }, []);
+  
   const validateName = (name) => {
     name = name.trim();
     return /^[a-zA-Z0-9 ]{8,}$/.test(name);
@@ -403,3 +422,10 @@ export default function AddProduct() {
     </>
   )
 }
+
+
+// fetch('https://hello-sql.vercel.app/api/categories')
+// .then((res) => res.json())
+// .then((data) => {
+//   setCategories(data);
+// });

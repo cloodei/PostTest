@@ -16,7 +16,7 @@ export default function ProductsView() {
     const [querying, setQuerying] = useState(true);
 
     useEffect(() => {
-        async function doSth() {
+        const doSth = async () => {
             setQuerying(true);
             await fetch('https://hello-sql.vercel.app/api/fakeproducts')
             .then((res) => res.json())
@@ -35,8 +35,12 @@ export default function ProductsView() {
             // .catch((err) => {
             //     setFetchErrors({ ...fetchErrors, categories: err });
             // });
+            return 1;
         }
-        doSth();
+        const doSthElse = async () => {
+            await doSth();
+        }
+        doSthElse();
         setQuerying(false);
     }, []);
     const { open, toggleDrawer } = useContext(DrawerContext);
