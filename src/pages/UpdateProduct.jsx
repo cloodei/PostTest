@@ -47,7 +47,6 @@ export default function AddProduct() {
         console.error(error);
       }
     }
-    fetchCategories();
 
     const fetchProduct = async () => {
       try {
@@ -67,8 +66,12 @@ export default function AddProduct() {
         console.error(error);
       }
     }
-    fetchProduct();
-    setQuerying(false);
+    const fetchAll = async () => {
+      await fetchCategories();
+      await fetchProduct();
+      setQuerying(false);
+    }
+    fetchAll();
   }, []);
 
   const validateName = (name) => {
