@@ -251,7 +251,7 @@ export default function AddProduct() {
           </div>
         </>
       )}
-      <div className="container-fluid add-product-bg">
+      <div className="container-fluid add-product-bg" style={{ minWidth: '100vh' }}>
         <i onClick={() => toggleDrawer(true)} className="fa-solid fa-bars toggle-fake-drawer"></i>
         <Drawer open={open} onClose={() => toggleDrawer(false)}
           PaperProps={{
@@ -306,17 +306,15 @@ export default function AddProduct() {
         </h3>
 
         {querying ? (
-          <div style={{ minWidth: '100vh', position: 'relative' }}>
-            <h2 className="db-announce" style={{ fontSize: '40px' }}>
-              Fetching product...
-              <CircularProgress
-                style={{
-                  color: '#3f51b5',
-                  marginLeft: '10px',
-                }}
-              />
-            </h2>
-          </div>
+          <h2 className="db-announce">
+            Fetching product...
+            <CircularProgress
+              style={{
+                color: '#3f51b5',
+                marginLeft: '18px',
+              }}
+            />
+          </h2>
         ) :
         <div className="payment-container container">
           <div className={`payment-form ${isFading ? 'fade-out' : 'fade-in'}`} style={{
