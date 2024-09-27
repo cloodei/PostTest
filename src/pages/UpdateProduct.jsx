@@ -24,13 +24,12 @@ export default function AddProduct() {
     fetch(`https://hello-sql.vercel.app/api/fakeproducts/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        const Data = data[0];
-        setName((prevName) => Data.name);
-        setImage((prevImage) => Data.image);
-        setPrice((prevPrice) => Data.price);
-        setDescription((prevDescription) => Data.description);
-        setCategory((prevCategory) => Data.category_id);
-        setInitialProduct((prevProduct) => Data);
+        setName((prevName) => data.name);
+        setImage((prevImage) => data.image);
+        setPrice((prevPrice) => data.price);
+        setDescription((prevDescription) => data.description);
+        setCategory((prevCategory) => data.category_id);
+        setInitialProduct((prevProduct) => data);
       });
   }, [id]);
   const navigate = useNavigate();
