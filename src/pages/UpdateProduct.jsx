@@ -28,6 +28,7 @@ export default function AddProduct() {
   const [ok, setOk] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [querying, setQuerying] = useState(true);
   const timeoutRef = useRef([null, null]);
   const { open, toggleDrawer } = useContext(DrawerContext);
   const handleClose = () => setOpenModal(false);
@@ -41,7 +42,7 @@ export default function AddProduct() {
         }
         const data = await response.json();
         console.log(data);
-        
+
         setCategories(data);
       }
       catch (error) {
@@ -70,11 +71,12 @@ export default function AddProduct() {
       }
     }
     fetchProduct();
+    setQuerying(false);
   }, []);
-  
+
   const validateName = (name) => {
     name = name.trim();
-    return /^[a-zA-Z0-9 ]{8,}$/.test(name);
+    return /^[a-zA-Z0-9 ,.!?]{4,}$/.test(name);
   };
 
   const validateImage = (image) => {
@@ -193,7 +195,7 @@ export default function AddProduct() {
     clearTimeout(timeoutRef[0]);
     setIsFading(false);
     setShowConfirmation(false);
-    if(ok)
+    if (ok)
       navigate('/productsView');
   }
 
@@ -212,7 +214,7 @@ export default function AddProduct() {
     }
     fakePrice = fakePrice.toFixed(2);
     let fakeCategory = {};
-    if(category === 0) {
+    if (category === 0) {
       fakeCategory = { id: 0, name: 'None' };
     }
     else {
@@ -302,6 +304,18 @@ export default function AddProduct() {
           UPDATE PRODUCT
           <span onClick={openProductPreview} className="special-product-preview-btn">Preview Product</span>
         </h3>
+
+        {querying ?
+          <h2 className="db-announce" style={{ fontSize: '40px' }}>
+            Fetching product...
+            <CircularProgress
+              style={{
+                color: '#3f51b5',
+                marginLeft: '10px',
+              }}
+            />
+          </h2>
+        :
         <div className="payment-container container">
           <div className={`payment-form ${isFading ? 'fade-out' : 'fade-in'}`} style={{
             width: '80%',
@@ -379,7 +393,7 @@ export default function AddProduct() {
                         </div>
                       </div>
                     ) : null}
-                    <select className="form-control form-control-lg form-input form-input-add-product form-select-add-product" id="typeCate" value={category} onChange={(e) => {setCategory(parseInt(e.target.value))}}>
+                    <select className="form-control form-control-lg form-input form-input-add-product form-select-add-product" id="typeCate" value={category} onChange={(e) => { setCategory(parseInt(e.target.value)) }}>
                       {categories.map((category, index) => (
                         <option key={index} value={category.id} style={{ color: 'black' }}>{category.name}</option>
                       ))}
@@ -428,10 +442,10 @@ export default function AddProduct() {
               </div>
             </form>
           </div>
-        </div>
-      {initialProduct &&
-        <FakeProductsModal product={initialProduct} open={openModal} handleClose={handleClose} newProduct={generateProductPreview()} />
-      }
+        </div>}
+        {initialProduct &&
+          <FakeProductsModal product={initialProduct} open={openModal} handleClose={handleClose} newProduct={generateProductPreview()} />
+        }
       </div>
     </>
   )

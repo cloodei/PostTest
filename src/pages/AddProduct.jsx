@@ -43,7 +43,7 @@ export default function AddProduct() {
 
   const validateName = (name) => {
     name = name.trim();
-    return /^[a-zA-Z0-9 ,.!?]{8,}$/.test(name);
+    return /^[a-zA-Z0-9 ,.!?]{4,}$/.test(name);
   };
 
   const validateImage = (image) => {
