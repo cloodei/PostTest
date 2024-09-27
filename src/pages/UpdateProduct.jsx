@@ -305,17 +305,19 @@ export default function AddProduct() {
           <span onClick={openProductPreview} className="special-product-preview-btn">Preview Product</span>
         </h3>
 
-        {querying ?
-          <h2 className="db-announce" style={{ fontSize: '40px' }}>
-            Fetching product...
-            <CircularProgress
-              style={{
-                color: '#3f51b5',
-                marginLeft: '10px',
-              }}
-            />
-          </h2>
-        :
+        {querying ? (
+          <div style={{ minWidth: '100vh' }}>
+            <h2 className="db-announce" style={{ fontSize: '40px' }}>
+              Fetching product...
+              <CircularProgress
+                style={{
+                  color: '#3f51b5',
+                  marginLeft: '10px',
+                }}
+              />
+            </h2>
+          </div>
+        ) :
         <div className="payment-container container">
           <div className={`payment-form ${isFading ? 'fade-out' : 'fade-in'}`} style={{
             width: '80%',
