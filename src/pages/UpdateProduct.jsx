@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { DrawerContext } from "../contexts/FakeDrawerContext";
 import '../assets/styles/UpdateProduct.css';
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { Drawer } from '@mui/material';
+import { Drawer, CircularProgress } from '@mui/material';
 import FakeProductsModal from "../components/FakeProductsModal";
 
 const testURL = 'http://localhost:3000/api/fakeproducts';
@@ -41,8 +41,6 @@ export default function AddProduct() {
           throw new Error('Failed to fetch categories');
         }
         const data = await response.json();
-        console.log(data);
-
         setCategories(data);
       }
       catch (error) {
@@ -58,7 +56,6 @@ export default function AddProduct() {
           throw new Error('Failed to fetch product');
         }
         const data = await response.json();
-        console.log(data);
         setInitialProduct(data);
         setName(data.name);
         setImage(data.image);
