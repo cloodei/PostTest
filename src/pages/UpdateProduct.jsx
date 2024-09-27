@@ -306,7 +306,7 @@ export default function AddProduct() {
         </h3>
 
         {querying ? (
-          <div style={{ minWidth: '100vh' }}>
+          <div style={{ minWidth: '100vh', position: 'relative' }}>
             <h2 className="db-announce" style={{ fontSize: '40px' }}>
               Fetching product...
               <CircularProgress
